@@ -10,9 +10,7 @@ export class PlacesService {
   constructor(
     private readonly configService: ConfigService,
     private readonly googleMapsClient: GoogleMapsClient,
-  ) {
-    console.log(process.env.PORT);
-  }
+  ) {}
 
   // TODO: Type the return value
   async findPlaces(text: string): Promise<any> {

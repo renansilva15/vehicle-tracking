@@ -4,4 +4,10 @@
 GET {{baseUrl}}
 
 ###
-GET {{baseUrl}}/places?text=Muro de Berlin
+GET {{baseUrl}}/places?text=Praia do Futuro Ceara
+
+###
+@originId=ChIJXQOKO4QanAcRBXRxtFKZLDY
+@destinationId=ChIJUYE3lr5HxwcRhF-TBaOIb1Y
+
+GET {{baseUrl}}/directions?originId={{originId}}&destinationId={{destinationId}}

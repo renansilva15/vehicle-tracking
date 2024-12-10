@@ -1,27 +1,29 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PlacesService } from './places.service';
-import { ConfigService } from '@nestjs/config';
+import { DirectionsController } from './directions.controller';
+import { DirectionsService } from './directions.service';
 import { Client as GoogleMapsClient } from '@googlemaps/google-maps-services-js';
+import { ConfigService } from '@nestjs/config';
 
-describe('PlacesService', () => {
-  let service: PlacesService;
+describe('DirectionsController', () => {
+  let controller: DirectionsController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
+      controllers: [DirectionsController],
       providers: [
         ConfigService,
         {
           provide: GoogleMapsClient,
           useValue: { findPlaceFromText: jest.fn() },
         },
-        PlacesService,
+        DirectionsService,
       ],
     }).compile();
 
-    service = module.get<PlacesService>(PlacesService);
+    controller = module.get<DirectionsController>(DirectionsController);
   });
 
   it('should be defined', () => {
-    expect(service).toBeDefined();
+    expect(controller).toBeDefined();
   });
 });

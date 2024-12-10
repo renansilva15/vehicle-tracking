@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PlacesService } from './places.service';
-import { ConfigService } from '@nestjs/config';
+import { DirectionsService } from './directions.service';
 import { Client as GoogleMapsClient } from '@googlemaps/google-maps-services-js';
+import { ConfigService } from '@nestjs/config';
 
-describe('PlacesService', () => {
-  let service: PlacesService;
+describe('DirectionsService', () => {
+  let service: DirectionsService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -14,11 +14,11 @@ describe('PlacesService', () => {
           provide: GoogleMapsClient,
           useValue: { findPlaceFromText: jest.fn() },
         },
-        PlacesService,
+        DirectionsService,
       ],
     }).compile();
 
-    service = module.get<PlacesService>(PlacesService);
+    service = module.get<DirectionsService>(DirectionsService);
   });
 
   it('should be defined', () => {
