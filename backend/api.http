@@ -4,4 +4,4 @@
 GET {{baseUrl}}
 
 ###
-GET {{baseUrl}}/places?text=example
+GET {{baseUrl}}/places?text=Muro de Berlin
