@@ -1,0 +1,7 @@
+@port=3333
+@baseUrl=http://localhost:{{port}}/api
+
+GET {{baseUrl}}
+
+###
+GET {{baseUrl}}/places?text=example
