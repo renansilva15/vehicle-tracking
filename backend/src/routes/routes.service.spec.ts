@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { RoutesService } from './routes.service';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { DirectionsService } from 'src/maps/directions/directions.service';
 
 describe('RoutesService', () => {
   let service: RoutesService;
@@ -11,6 +12,10 @@ describe('RoutesService', () => {
         RoutesService,
         {
           provide: PrismaService,
+          useValue: {},
+        },
+        {
+          provide: DirectionsService,
           useValue: {},
         },
       ],
