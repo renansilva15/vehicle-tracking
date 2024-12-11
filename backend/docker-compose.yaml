@@ -1,0 +1,16 @@
+services:
+  db:
+    build: ./.docker/mongodb
+    env_file:
+      - .env
+    ports:
+      - 27017:27017
+  
+  app:
+    build: .
+    ports:
+      - 3333:3333
+    volumes:
+      - .:/home/node/app
+    depends_on:
+      - db
