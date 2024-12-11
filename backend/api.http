@@ -11,3 +11,19 @@ GET {{baseUrl}}/places?text=Praia do Futuro Ceara
 @destinationId=ChIJUYE3lr5HxwcRhF-TBaOIb1Y
 
 GET {{baseUrl}}/directions?originId={{originId}}&destinationId={{destinationId}}
+
+###
+POST {{baseUrl}}/routes
+Content-Type: application/json
+
+{
+  "name": "beach",
+  "sourceId": "{{originId}}",
+  "destinationId": "{{destinationId}}"
+}
+
+###
+GET {{baseUrl}}/routes
+
+###
+GET {{baseUrl}}/routes/6759e7c5a2690737ab034288

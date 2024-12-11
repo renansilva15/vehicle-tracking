@@ -15,5 +15,6 @@ import { DirectionsService } from './directions/directions.service';
     PlacesService,
     DirectionsService,
   ],
+  exports: [DirectionsService],
 })
 export class MapsModule {}
