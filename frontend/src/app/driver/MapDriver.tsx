@@ -22,7 +22,7 @@ export function MapDriver(props: MapDriverProps) {
   const map = useMap(mapContainerRef)
 
   useEffect(
-    function listenToDriverRoutePoints() {
+    function listenToDriverRoute() {
       if (!map || !routeId || !startLocation || !endLocation) {
         return
       }
